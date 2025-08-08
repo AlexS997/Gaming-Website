@@ -36,9 +36,21 @@ const Hero = () => {
                 ZERO
             </div>
 
-            <p className=''>
+            <p className='max-w-[80%] text-center text-[#babaff]'>
                 Notice: Illuvium Games are in Beta. Participation involves risk. Read our full Disclaimer here.
             </p>
+        </div>
+
+        <div className='absolute bottom-40 lg:right-24 right-5 mt-24 animate-bounce sm:inline-block hidden'>
+            <div className='flex flex-col items-center'>
+                <div className='w-8 h-12 border-2 border-[#babaff] rounded-full flex justify-center pt-1'>
+                    <div className='w-1 h-3 bg-[#babaff] rounded-full animate-pulse'></div>
+                </div>
+
+                <p className='text-[#babaff] mt-2'>
+                    Scroll Down
+                </p>
+            </div>
         </div>
     </main>
   )

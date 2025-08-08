@@ -1,8 +1,11 @@
+import { useEffect, useState } from 'react'
 import NavButton from './NavButton'
 import Logo from '/src/assets/images/logo.png'
 import 'boxicons/css/boxicons.min.css'
 
 const Header = () => {
+
+    const [scrolled, setScrolled] = useState(false)
 
     const toggleMenu = () => {
         const mobileMenu = document.getElementById("menu")
@@ -14,8 +17,27 @@ const Header = () => {
         }
     }
 
+    useEffect(() => {
+        const handleScroll = () => {
+            if (window.scrollY > 5) {
+                setScrolled(true)
+            } else {
+                setScrolled(false)
+            }
+        }
+
+        window.addEventListener('scroll', handleScroll)
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll)
+        }
+    }, [])
+
   return (
-    <header className='py-1 px-7 flex justify-between items-center sticky top-0 z-50 w-full border-b-[0.3px] border-[#babaff]'>
+    <header className={`py-1 px-7 flex justify-between items-center sticky top-0 z-50 w-full border-b-[0.3px] transition-colors duration-300 border-[#babaff]
+        ${scrolled ? 'bg-black/70 backdrop-blur-md' : 'bg-transparent'}`}
+    >
+
         <div className='flex lg:gap-14 gap-4 items-center'>
             <img src={Logo} alt="logo" 
                 className='md:w-16 w-12'
@@ -43,7 +65,7 @@ const Header = () => {
 
         {/* Mobile Menu - visible mobile*/}
         <button onClick={toggleMenu}  className='text-3xl p-2 md:hidden cursor-pointer'>
-            <i class='bx bx-menu'></i>
+            <i className='bx bx-menu'></i>
         </button>
 
         {/* Mobile Menu - default hidden*/}
