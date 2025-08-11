@@ -4,7 +4,7 @@ import Img2 from '/src/assets/images/illu-logo.png'
 
 const Hero = () => {
   return (
-    <main className="relative w-full h-screen overflow-hidden flex justify-center mb-[10%]">
+    <main className="relative w-full h-screen overflow-hidden flex justify-center">
         <video src={Video}
             autoPlay
             loop

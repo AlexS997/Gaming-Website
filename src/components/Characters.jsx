@@ -75,7 +75,9 @@ const Characters = () => {
     }
 
   return (
-    <section className="relative w-full h-screen overflow-hidden mb-[10%]">
+    <section className="relative w-full h-screen overflow-hidden bg-gradient-to-t from-[#1d1f3e] to-black"
+    >
+        <div className="absolute bottom-0 left-0 w-full h-[2px] bg-white shadow-[0_0_10px_rgba(255,255,255,0.7),0_0_20px_rgba(167,139,250,0.5)] pointer-events-none mb-0 md:mb-2" />
 
         <CustomCursor isHovering={cursorInArea}/>
 
